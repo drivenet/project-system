@@ -1,0 +1,42 @@
+﻿<Project>
+  <PropertyGroup Label="TopLevelPathDefaults">
+    <DnetSharedPath Condition="'$(DnetSharedPath)' == ''">..\shared</DnetSharedPath>
+  </PropertyGroup>
+
+  <PropertyGroup Label="MinimalProjectSettings">
+    <Features>IOperation</Features>
+    <Authors>DRIVE.NET, Inc.</Authors>
+    <Product>DRIVE.NET, Inc. projects</Product>
+    <Copyright>Copyright © DRIVE.NET, Inc.</Copyright>
+    <Description>-</Description>
+    <NeutralLanguage>en</NeutralLanguage>
+    <CodeAnalysisRuleSet>$(DnetSharedPath)\Default.ruleset</CodeAnalysisRuleSet>
+    <LangVersion>latest</LangVersion>
+    <NoWarn>SA0001</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup Label="MinimalAnalyzerFiles">
+    <AdditionalFiles Include="$(DnetSharedPath)\stylecop.json">
+      <Link>stylecop.json</Link>
+      <Visible>false</Visible>
+    </AdditionalFiles>
+  </ItemGroup>
+
+  <ItemGroup Label="MinimalAnalyzerReferences">
+    <PackageReference Include="AsyncUsageAnalyzers" Version="1.0.0-alpha003" />
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.6.0" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta006" />
+  </ItemGroup>
+
+  <Target 
+        Name="DisableAnalyzersForVisualStudioBuild" 
+        BeforeTargets="CoreCompile" 
+        Condition="'$(BuildingInsideVisualStudio)' == 'True' 
+            And '$(BuildingProject)' == 'True' 
+            And '$(BuildProjectReferences)' == 'True' 
+            And '$(Configuration)' != 'Integration'">
+    <ItemGroup>
+      <Analyzer Remove="@(Analyzer)"/>
+    </ItemGroup>
+  </Target>
+</Project>
