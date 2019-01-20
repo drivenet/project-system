@@ -24,10 +24,10 @@
 
   <ItemGroup Label="MinimalAnalyzerReferences">
     <PackageReference Include="AsyncUsageAnalyzers" Version="1.0.0-alpha003" />
-    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.6.2" PrivateAssets="all">
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.6.3" PrivateAssets="all">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta008" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.1-beta.61" />
   </ItemGroup>
 
   <Target 
