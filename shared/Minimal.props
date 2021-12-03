@@ -16,10 +16,10 @@
     <Copyright>Copyright © DRIVE.NET, Inc.</Copyright>
     <Description>-</Description>
     <NeutralLanguage>en</NeutralLanguage>
-    <LangVersion>10</LangVersion>
+    <LangVersion>latest</LangVersion>
     <Configurations>$(Configurations);Integration</Configurations>
     <DebugType>embedded</DebugType>
-    <AnalysisLevel>6</AnalysisLevel>
+    <AnalysisLevel>latest</AnalysisLevel>
     <WarningsAsErrors>CS8073;nullable</WarningsAsErrors>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
