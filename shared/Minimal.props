@@ -7,7 +7,7 @@
     <LegacyTargetFramework>net472</LegacyTargetFramework>
     <LegacyTargetFrameworkVersion>v4.7.2</LegacyTargetFrameworkVersion>
     <LibraryTargetFramework>netstandard2.0</LibraryTargetFramework>
-    <ApplicationTargetFramework>net5.0</ApplicationTargetFramework>
+    <ApplicationTargetFramework>net6.0</ApplicationTargetFramework>
   </PropertyGroup>
 
   <PropertyGroup Label="MinimalProjectSettings">
@@ -31,6 +31,10 @@
     <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
   </PropertyGroup>
 
+  <PropertyGroup Label="ProductionProjectSettings" Condition="'$(Configuration)' != 'Debug'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
   <ItemGroup Label="MinimalAnalyzerFiles">
     <AdditionalFiles Include="$(DnetSharedPath)\stylecop.json">
       <Link>stylecop.json</Link>
@@ -43,6 +47,6 @@
   </ItemGroup>
 
   <ItemGroup Label="MinimalAnalyzerReferences">
-    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.354" PrivateAssets="All" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.376" PrivateAssets="All" />
   </ItemGroup>
 </Project>

@@ -25,10 +25,10 @@
   </PropertyGroup>
 
   <ItemGroup Label="NullableCompatReferences" Condition="'$(Nullable)' == 'enable'">
-    <PackageReference Include="Nullable" Version="1.3.0" />
+    <PackageReference Include="Nullable" Version="1.3.0" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup Label="OtherFeaturesCompatReferences">
-    <PackageReference Include="IsExternalInit" Version="1.0.1" />
+    <PackageReference Include="IsExternalInit" Version="1.0.1" PrivateAssets="All" />
   </ItemGroup>
 </Project>
