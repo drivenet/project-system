@@ -29,6 +29,6 @@
   </ItemGroup>
 
   <ItemGroup Label="OtherFeaturesCompatReferences">
-    <PackageReference Include="IsExternalInit" Version="1.0.1" PrivateAssets="All" />
+    <PackageReference Include="IsExternalInit" Version="1.0.2" PrivateAssets="All" />
   </ItemGroup>
 </Project>

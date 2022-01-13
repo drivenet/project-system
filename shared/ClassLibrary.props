@@ -17,6 +17,6 @@
   </ItemGroup>
 
   <ItemGroup Label="ClassLibrarySourceGenerators">
-    <PackageReference Include="Dnet.Core.Generators" Version="1.0.4" PrivateAssets="All" />
+    <ProjectReference Include="$(DnetLibPath)\Dnet.Core.Generators\Dnet.Core.Generators.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
   </ItemGroup>
 </Project>

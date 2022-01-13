@@ -21,6 +21,7 @@
     <DebugType>embedded</DebugType>
     <AnalysisLevel>latest</AnalysisLevel>
     <WarningsAsErrors>CS8073;nullable</WarningsAsErrors>
+    <MSBuildWarningsAsErrors>CS8785</MSBuildWarningsAsErrors>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <ShowMessageForImplicitlySkipAnalyzers>false</ShowMessageForImplicitlySkipAnalyzers>
