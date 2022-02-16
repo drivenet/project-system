@@ -1,0 +1,12 @@
+﻿<Project>
+  <Import Project="MinimalTestLibrary.props" />
+  <Import Project="DnetCompat.props" />
+
+  <ItemGroup Label="TestPackageReferences">
+    <ProjectReference Include="$(DnetLibPath)\Dnet.Testing\Dnet.Testing.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Label="TestConfigFiles">
+    <None Include="$(DnetSharedPath)\TestLibrary\app.config" Visible="false" Condition="'$(TargetFramework)' == '$(LegacyTargetFramework)'" />
+  </ItemGroup>
+</Project>

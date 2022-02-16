@@ -36,6 +36,10 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
 
+  <PropertyGroup Label="IntegrationProjectSettings" Condition="'$(Configuration)' == 'Integration'">
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
   <ItemGroup Label="MinimalAnalyzerFiles">
     <AdditionalFiles Include="$(DnetSharedPath)\stylecop.json">
       <Link>stylecop.json</Link>
