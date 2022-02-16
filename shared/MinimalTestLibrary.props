@@ -19,7 +19,7 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" />
   </ItemGroup>
 
-  <ItemGroup Label="TestConfigFiles">
+  <ItemGroup Label="MinimalTestConfigFiles">
     <None Include="$(DnetSharedPath)\TestLibrary\xunit.runner.json" Visible="false" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>
