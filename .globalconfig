@@ -398,6 +398,8 @@ dotnet_diagnostic.CA5400.severity = warning
 dotnet_diagnostic.CA5401.severity = warning
 dotnet_diagnostic.CA5402.severity = warning
 dotnet_diagnostic.CA5403.severity = warning
+dotnet_diagnostic.CA5404.severity = warning
+dotnet_diagnostic.CA5405.severity = warning
 
 # StyleCop rules
 dotnet_diagnostic.SA0001.severity = none
