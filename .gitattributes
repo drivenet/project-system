@@ -9,6 +9,7 @@
 *.rtf	diff=astextplain
 *.RTF	diff=astextplain
 
+*.jpeg 	binary
 *.jpg  	binary
 *.png 	binary
 *.gif 	binary
