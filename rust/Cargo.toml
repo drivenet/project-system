@@ -1,0 +1,6 @@
+[profile.release]
+lto = true
+strip = true
+opt-level = "s"
+panic = "abort"
+codegen-units = 1
