@@ -64,6 +64,7 @@ README* text
 *.html text diff=html
 *.xhtml text diff=html
 
+*.service text eol=lf
 *.pp text
 *.erb text eol=lf
 *.epp text eol=lf
@@ -99,11 +100,15 @@ Dockerfile text
 *.sln text eol=crlf merge=union
 *.csproj text merge=union
 
+*.tf text
+*.tfrc text
+*.hcl text
+*.lock.hcl text -diff
+
 *.patch -text
 
 package-lock.json text -diff
 *.lock text -diff
-*.lock.hcl text -diff
 
 *.exe binary
 *.dll binary
