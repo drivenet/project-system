@@ -1,0 +1,11 @@
+.idea/
+.trunk/out
+
+.vs/
+*.suo
+*.csproj.user
+obj/
+bin/
+packages/
+Properties/launchSettings.json
+
