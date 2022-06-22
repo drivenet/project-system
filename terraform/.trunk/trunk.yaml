@@ -1,0 +1,8 @@
+version: 0.1
+cli:
+  version: 0.13.1-beta
+lint:
+  enabled:
+    - gitleaks@8.8.7
+    - markdownlint@0.31.1
+    - tflint@0.35.0
