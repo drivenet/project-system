@@ -8,4 +8,5 @@ obj/
 bin/
 packages/
 **/Properties/launchSettings.json
+**/Properties/*.p12
 
