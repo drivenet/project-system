@@ -1,5 +1,6 @@
 {
 	"recommendations": [
+        "editorconfig.editorconfig",
 		"trunk.io",
 		"yzhang.markdown-all-in-one",
 		"davidanson.vscode-markdownlint",

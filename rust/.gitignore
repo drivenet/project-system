@@ -1,5 +1,7 @@
+# Shared
 .idea/
-.trunk/out
 
+# Rust
 target/
 
+# Local

@@ -1,6 +1,7 @@
+# Shared
 .idea/
-.trunk/out
 
+# .NET
 .vs/
 *.suo
 *.csproj.user
@@ -10,3 +11,4 @@ packages/
 **/Properties/launchSettings.json
 **/Properties/*.p12
 
+# Local

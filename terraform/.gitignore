@@ -1,5 +1,7 @@
+# Shared
 .idea/
-.trunk/out
 
+# Terraform
 .terraform/
 
+# Local
