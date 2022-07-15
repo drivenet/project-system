@@ -103,6 +103,7 @@ Dockerfile text
 *.tf text
 *.tfrc text
 *.hcl text
+*.tftpl text eol=lf
 *.lock.hcl text -diff
 
 *.patch -text
