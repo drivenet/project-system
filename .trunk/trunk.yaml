@@ -1,7 +1,14 @@
+runtimes:
+  enabled:
+    - go@1.18.3
+    - node@16.14.2
 version: 0.1
 cli:
-  version: 0.14.0-beta
+  version: 0.18.0-beta
 lint:
   enabled:
-    - gitleaks@8.8.7
-    - markdownlint@0.31.1
+    - git-diff-check@SYSTEM
+    - prettier@2.7.1
+    - gitleaks@8.13.0
+    - markdownlint@0.32.2
+    - tflint@0.41.0
