@@ -1,18 +1,11 @@
 ﻿<Project>
   <Import Project="Default.props" />
 
-  <PropertyGroup Label="SourceGeneratorProjectSettings">
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <IsRoslynComponent>true</IsRoslynComponent>
+  <PropertyGroup Label="ClassLibraryTargetFrameworks">
+    <DefaultTargetFramework>$(LegacyTargetFramework)</DefaultTargetFramework>
+    <NewTargetFramework>$(LibraryTargetFramework)</NewTargetFramework>
+    <NewTargetFrameworks>$(LibraryTargetFramework);$(ApplicationTargetFramework)</NewTargetFrameworks>
   </PropertyGroup>
-
-  <PropertyGroup Label="DebugProjectSettings" Condition="'$(Configuration)' == 'Debug'">
-    <Optimize>true</Optimize>
-  </PropertyGroup>
-
-  <ItemGroup Label="SourceGeneratorDependencies">
-    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4" PrivateAssets="all" />
-  </ItemGroup>
 
   <ItemGroup Label="TestInternalsVisibleTo">
     <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">

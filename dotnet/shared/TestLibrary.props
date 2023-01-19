@@ -2,7 +2,7 @@
   <Import Project="MinimalTestLibrary.props" />
   <Import Project="DnetCompat.props" />
 
-  <ItemGroup Label="TestPackageReferences">
+  <ItemGroup Label="TestProjectReferences">
     <ProjectReference Include="$(DnetLibPath)\Dnet.Testing\Dnet.Testing.csproj" />
   </ItemGroup>
 

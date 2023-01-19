@@ -2,10 +2,10 @@
   <Import Project="TestLibrary.props" />
 
   <PropertyGroup Label="SourceGeneratorTestLibraryProjectSettings">
-    <TargetFramework>$(ApplicationTargetFramework)</TargetFramework>
+    <TargetFramework>$(GeneratorTargetFramework)</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup Label="SourceGeneratorTestPackageReferences">
+  <ItemGroup Label="SourceGeneratorTestProjectReferences">
     <ProjectReference Include="$(DnetLibPath)\Dnet.Testing.Generators\Dnet.Testing.Generators.csproj" />
   </ItemGroup>
 </Project>
