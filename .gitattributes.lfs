@@ -113,6 +113,8 @@ package-lock.json text -diff
 
 *.exe binary filter=lfs diff=lfs merge=lfs
 *.dll binary filter=lfs diff=lfs merge=lfs
+*.pdb binary filter=lfs diff=lfs merge=lfs
+*.so binary filter=lfs diff=lfs merge=lfs
 *.pyc binary
 
 *.bmp binary filter=lfs diff=lfs merge=lfs
