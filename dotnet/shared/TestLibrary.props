@@ -2,6 +2,11 @@
   <Import Project="MinimalTestLibrary.props" />
   <Import Project="DnetCompat.props" />
 
+  <PropertyGroup Label="AvailableTestLibraryTargetFrameworks">
+    <DefaultTargetFramework>$(LegacyTargetFramework)</DefaultTargetFramework>
+    <DefaultTargetFrameworks>$(ApplicationTargetFramework);$(DefaultTargetFramework)</DefaultTargetFrameworks>
+  </PropertyGroup>
+
   <ItemGroup Label="TestProjectReferences">
     <ProjectReference Include="$(DnetLibPath)\Dnet.Testing\Dnet.Testing.csproj" />
   </ItemGroup>
