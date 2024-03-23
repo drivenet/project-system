@@ -1,5 +1,5 @@
 <Project>
   <PropertyGroup Label="NetCoreProjectSettings" Condition="'$(TargetFramework)' == '$(ApplicationTargetFramework)'">
-    <NoWarn>$(NoWarn);CA2007;</NoWarn>
+    <NoWarn>$(NoWarn);CA2007</NoWarn>
   </PropertyGroup>
 </Project>
