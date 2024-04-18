@@ -7,7 +7,7 @@
     <LegacyTargetFramework>net472</LegacyTargetFramework>
     <LegacyTargetFrameworkVersion>v4.7.2</LegacyTargetFrameworkVersion>
     <LibraryTargetFramework>netstandard2.0</LibraryTargetFramework>
-    <ApplicationTargetFramework>net6.0</ApplicationTargetFramework>
+    <ApplicationTargetFramework>net8.0</ApplicationTargetFramework>
     <GeneratorTargetFramework>net472</GeneratorTargetFramework>
     <BeforeTargetFrameworkInferenceTargets>$(DnetSharedPath)/Runtime.targets</BeforeTargetFrameworkInferenceTargets> <!-- $(DnetSharedPath)/ prefix added to prevent build fail -->
   </PropertyGroup>

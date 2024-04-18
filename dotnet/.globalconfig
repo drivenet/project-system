@@ -84,6 +84,7 @@ csharp_preferred_modifier_order = public,private,protected,internal,static,exter
 # Code-block preferences
 csharp_prefer_braces = true:warning
 csharp_prefer_simple_using_statement = true:suggestion
+csharp_style_prefer_method_group_conversion = true:suggestion
 
 # Expression-level preferences
 csharp_style_unused_value_assignment_preference = discard_variable:warning
@@ -313,6 +314,7 @@ dotnet_diagnostic.CA1505.severity = warning
 dotnet_diagnostic.CA1506.severity = warning
 dotnet_diagnostic.CA1508.severity = warning
 dotnet_diagnostic.CA1509.severity = warning
+dotnet_diagnostic.CA1510.severity = none
 dotnet_diagnostic.CA1700.severity = warning
 dotnet_diagnostic.CA1707.severity = none
 dotnet_diagnostic.CA1710.severity = none
@@ -336,6 +338,8 @@ dotnet_diagnostic.CA1823.severity = none # Superseded by IDE0052
 dotnet_diagnostic.CA1836.severity = suggestion
 dotnet_diagnostic.CA1845.severity = suggestion
 dotnet_diagnostic.CA1849.severity = warning
+dotnet_diagnostic.CA1852.severity = warning
+dotnet_code_quality.CA1852.ignore_internalsvisibleto = false
 dotnet_diagnostic.CA2000.severity = warning
 dotnet_diagnostic.CA2002.severity = warning
 dotnet_diagnostic.CA2007.severity = warning
