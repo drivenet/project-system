@@ -65,3 +65,5 @@ T:System.ComponentModel.Composition.Convention.AttributedModelProvider; Use type
 T:System.Threading.Timer; Use System.TimeProvider.CreateTimer instead
 T:System.Timers.Timer; Use System.TimeProvider.CreateTimer instead
 P:System.TimeProvider.System; Use injected TimeProvider instead
+M:System.DateTimeOffset.#ctor(System.DateTime);Use DateTimeOffset constructor with a specified offset, checking the DateTime.Kind, since this constructor is very prone to timezone errors
+M:System.DateTimeOffset.op_Implicit(System.DateTime);Use DateTimeOffset constructor with a specified offset, checking the DateTime.Kind, since this constructor is very prone to timezone errors
