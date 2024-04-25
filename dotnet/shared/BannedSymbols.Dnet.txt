@@ -19,3 +19,4 @@ T:System.Web.Mvc.OutputCacheAttribute;Use Dnet.Web.Mvc.CacheOutput instead
 P:System.Diagnostics.Stopwatch.Elapsed;Use Dnet.Time.IMonotonicTimeSource or Dnet.Time.OSMonotonicTimeSource instead, unless performance-constrained
 P:System.Diagnostics.Stopwatch.ElapsedMilliseconds;Use Dnet.Time.IMonotonicTimeSource or Dnet.Time.OSMonotonicTimeSource instead, unless performance-constrained
 P:System.Diagnostics.Stopwatch.ElapsedTicks;Use Dnet.Time.IMonotonicTimeSource or Dnet.Time.OSMonotonicTimeSource instead, unless performance-constrained
+M:System.Threading.Tasks.Task.Yield();Use TaskEx.YieldSafe() instead for synchronization context-safe code

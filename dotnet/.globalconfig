@@ -280,8 +280,8 @@ dotnet_diagnostic.IDE0079.severity = warning
 
 # FxCop rules
 dotnet_diagnostic.CA1000.severity = none
-dotnet_diagnostic.CA1002.severity = warning
-dotnet_code_quality.ca1002.api_surface = public, internal
+dotnet_diagnostic.CA1002.severity = suggestion
+dotnet_code_quality.CA1002.api_surface = public, internal
 dotnet_diagnostic.CA1003.severity = suggestion
 dotnet_diagnostic.CA1008.severity = warning
 dotnet_diagnostic.CA1012.severity = warning
