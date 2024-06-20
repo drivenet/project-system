@@ -19,4 +19,13 @@ T:System.Web.Mvc.OutputCacheAttribute;Use Dnet.Web.Mvc.CacheOutput instead
 P:System.Diagnostics.Stopwatch.Elapsed;Use Dnet.Time.IMonotonicTimeSource or Dnet.Time.OSMonotonicTimeSource instead, unless performance-constrained
 P:System.Diagnostics.Stopwatch.ElapsedMilliseconds;Use Dnet.Time.IMonotonicTimeSource or Dnet.Time.OSMonotonicTimeSource instead, unless performance-constrained
 P:System.Diagnostics.Stopwatch.ElapsedTicks;Use Dnet.Time.IMonotonicTimeSource or Dnet.Time.OSMonotonicTimeSource instead, unless performance-constrained
-M:System.Threading.Tasks.Task.Yield();Use TaskEx.YieldSafe() instead for synchronization context-safe code
+M:System.Threading.Tasks.Task.Yield();Use TaskEx.YieldUncaptured() instead for synchronization context-safe code
+M:System.IO.StreamWriter.#ctor(System.IO.Stream);Use FormattedStreamWriter instead
+M:System.IO.StreamWriter.#ctor(System.String);Use FormattedStreamWriter instead
+M:System.IO.StreamWriter.#ctor(System.IO.Stream,System.Text.Encoding);Use FormattedStreamWriter instead
+M:System.IO.StreamWriter.#ctor(System.String,System.Boolean);Use FormattedStreamWriter instead
+M:System.IO.StreamWriter.#ctor(System.IO.Stream,System.Text.Encoding,System.Int32);Use FormattedStreamWriter instead
+M:System.IO.StreamWriter.#ctor(System.String,System.Boolean,System.Text.Encoding);Use FormattedStreamWriter instead
+M:System.IO.StreamWriter.#ctor(System.IO.Stream,System.Text.Encoding,System.Int32,System.Boolean);Use FormattedStreamWriter instead
+M:System.IO.StreamWriter.#ctor(System.String,System.Boolean,System.Text.Encoding,System.Int32);Use FormattedStreamWriter instead
+M:System.Web.Mvc.AjaxRequestExtensions.IsAjaxRequest(System.Web.HttpRequestBase);Use Dnet.Web.HttpRequestBaseExtensions.IsXhr instead since the original method checks in too many places
