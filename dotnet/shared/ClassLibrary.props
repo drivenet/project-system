@@ -3,7 +3,7 @@
 
   <ItemGroup Label="ClassLibraryAnalyzerFiles">
     <AdditionalFiles Include="$(MSBuildThisFileDirectory)\BannedSymbols.Dnet.txt">
-      <Link>BannedSymbols.Dnet.Dnet.Shared.txt</Link>
+      <Link>BannedSymbols.Dnet.Shared.txt</Link>
       <Visible>false</Visible>
     </AdditionalFiles>
   </ItemGroup>
