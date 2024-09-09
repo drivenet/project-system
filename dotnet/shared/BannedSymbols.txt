@@ -41,6 +41,8 @@ P:System.Collections.Concurrent.ConcurrentDictionary`2.Keys;Use dictionary pair 
 P:System.Collections.Concurrent.ConcurrentDictionary`2.Values;Use dictionary pair enumeration instead, since this property is very slow
 M:System.Collections.Concurrent.ConcurrentDictionary`2.ToArray();Use dictionary pair enumeration instead, since this method is very slow
 M:Newtonsoft.Json.JsonSerializer.#ctor();Use JsonSerializer.CreateDefault() or JsonSerializer.Create(JsonSerializerSettings) instead
+P:System.Web.Configuration.HttpCapabilitiesBase.Crawler;Use HttpContext.GetBotCheckContext() instead
+P:System.Web.HttpBrowserCapabilitiesBase.Crawler;Use HttpContext.GetBotCheckContext() instead
 T:System.ComponentModel.Composition.ExportAttribute; Use types from System.Composition instead
 T:System.ComponentModel.Composition.ExportMetadataAttribute; Use types from System.Composition instead
 T:System.ComponentModel.Composition.ImportAttribute; Use types from System.Composition instead
@@ -59,3 +61,4 @@ T:System.Timers.Timer; Use System.TimeProvider.CreateTimer instead
 M:System.DateTimeOffset.#ctor(System.DateTime);Use DateTimeOffset constructor with a specified offset, checking the DateTime.Kind, since this constructor is very prone to timezone errors
 M:System.DateTimeOffset.op_Implicit(System.DateTime);Use DateTimeOffset constructor with a specified offset, checking the DateTime.Kind, since this constructor is very prone to timezone errors
 T:System.Threading.LazyInitializer;Use System.Lazy<> instead, LazyInitializer is NRT-unfriendly for old netstandard
+F:System.Security.Cryptography.X509Certificates.X509RevocationMode.Offline;Use Online revocation check instead, Offline uses only cached revocation information

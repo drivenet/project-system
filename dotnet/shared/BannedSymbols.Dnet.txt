@@ -29,3 +29,14 @@ M:System.IO.StreamWriter.#ctor(System.String,System.Boolean,System.Text.Encoding
 M:System.IO.StreamWriter.#ctor(System.IO.Stream,System.Text.Encoding,System.Int32,System.Boolean);Use FormattedStreamWriter instead
 M:System.IO.StreamWriter.#ctor(System.String,System.Boolean,System.Text.Encoding,System.Int32);Use FormattedStreamWriter instead
 M:System.Web.Mvc.AjaxRequestExtensions.IsAjaxRequest(System.Web.HttpRequestBase);Use Dnet.Web.HttpRequestBaseExtensions.IsXhr instead since the original method checks in too many places
+M:System.Threading.Tasks.Task.WaitAsync(System.Threading.CancellationToken);Consider using TaskExtensions.WithCancellation for more predictable antecedent task failure handling
+M:System.Threading.Tasks.Task.WaitAsync(System.TimeSpan);Consider using TaskExtensions.WithCancellation for more predictable antecedent task failure handling
+M:System.Threading.Tasks.Task.WaitAsync(System.TimeSpan,System.Threading.CancellationToken);Consider using TaskExtensions.WithCancellation for more predictable antecedent task failure handling
+M:System.Threading.Tasks.Task.WaitAsync(System.TimeSpan,System.Threading.CancellationToken);Consider using TaskExtensions.WithCancellation for more predictable antecedent task failure handling
+M:System.Threading.Tasks.Task.WaitAsync(System.TimeSpan,System.TimeProvider,System.Threading.CancellationToken);Consider using TaskExtensions.WithCancellation for more predictable antecedent task failure handling
+M:System.Threading.Tasks.Task`1.WaitAsync(System.Threading.CancellationToken);Consider using TaskExtensions.WithCancellation for more predictable antecedent task failure handling
+M:System.Threading.Tasks.Task`1.WaitAsync(System.TimeSpan);Consider using TaskExtensions.WithCancellation for more predictable antecedent task failure handling
+M:System.Threading.Tasks.Task`1.WaitAsync(System.TimeSpan,System.Threading.CancellationToken);Consider using TaskExtensions.WithCancellation for more predictable antecedent task failure handling
+M:System.Threading.Tasks.Task`1.WaitAsync(System.TimeSpan,System.TimeProvider,System.Threading.CancellationToken);Consider using TaskExtensions.WithCancellation for more predictable antecedent task failure handling
+M:System.Threading.Tasks.TimeProviderTaskExtensions.WaitAsync(System.Threading.Tasks.Task,System.TimeSpan,System.TimeProvider,System.Threading.CancellationToken);Consider using TaskExtensions.WithCancellation for more predictable antecedent task failure handling
+M:System.Threading.Tasks.TimeProviderTaskExtensions.WaitAsync`1(System.Threading.Tasks.Task`1,System.TimeSpan,System.TimeProvider,System.Threading.CancellationToken);Consider using TaskExtensions.WithCancellation for more predictable antecedent task failure handling
