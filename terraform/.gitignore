@@ -1,5 +1,6 @@
 # Shared
 .idea/
+**/.DS_Store
 
 # Terraform
 .terraform/
