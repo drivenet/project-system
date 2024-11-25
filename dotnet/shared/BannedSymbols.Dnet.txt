@@ -16,9 +16,6 @@ M:System.Enum.Parse(System.Type,System.String,System.Boolean);Use Dnet.Utils.Enu
 M:System.Guid.NewGuid();Use Dnet.Utils.EuidGenerator.NewEuid() instead, unless generating IDs for logging/tracing purposes or for static initialization
 F:System.Web.HttpCacheability.NoCache;Use System.Web.HttpCacheability.Prohibit() instead
 T:System.Web.Mvc.OutputCacheAttribute;Use Dnet.Web.Mvc.CacheOutput instead
-P:System.Diagnostics.Stopwatch.Elapsed;Use Dnet.Time.IMonotonicTimeSource or Dnet.Time.OSMonotonicTimeSource instead, unless performance-constrained
-P:System.Diagnostics.Stopwatch.ElapsedMilliseconds;Use Dnet.Time.IMonotonicTimeSource or Dnet.Time.OSMonotonicTimeSource instead, unless performance-constrained
-P:System.Diagnostics.Stopwatch.ElapsedTicks;Use Dnet.Time.IMonotonicTimeSource or Dnet.Time.OSMonotonicTimeSource instead, unless performance-constrained
 M:System.Threading.Tasks.Task.Yield();Use TaskEx.YieldUncaptured() instead for synchronization context-safe code
 M:System.IO.StreamWriter.#ctor(System.IO.Stream);Use FormattedStreamWriter instead
 M:System.IO.StreamWriter.#ctor(System.String);Use FormattedStreamWriter instead
@@ -40,3 +37,11 @@ M:System.Threading.Tasks.Task`1.WaitAsync(System.TimeSpan,System.Threading.Cance
 M:System.Threading.Tasks.Task`1.WaitAsync(System.TimeSpan,System.TimeProvider,System.Threading.CancellationToken);Consider using TaskExtensions.WithCancellation for more predictable antecedent task failure handling
 M:System.Threading.Tasks.TimeProviderTaskExtensions.WaitAsync(System.Threading.Tasks.Task,System.TimeSpan,System.TimeProvider,System.Threading.CancellationToken);Consider using TaskExtensions.WithCancellation for more predictable antecedent task failure handling
 M:System.Threading.Tasks.TimeProviderTaskExtensions.WaitAsync`1(System.Threading.Tasks.Task`1,System.TimeSpan,System.TimeProvider,System.Threading.CancellationToken);Consider using TaskExtensions.WithCancellation for more predictable antecedent task failure handling
+P:System.Web.Configuration.HttpCapabilitiesBase.Crawler;Use HttpContext.GetBotCheckContext() instead
+P:System.Web.HttpBrowserCapabilitiesBase.Crawler;Use HttpContext.GetBotCheckContext() instead
+P:System.Reflection.Assembly.ExportedTypes;Use SafeGetExportedTypes() instead
+M:System.Reflection.Assembly.GetExportedTypes();Use SafeGetExportedTypes() instead
+M:System.Net.HttpMethod.#ctor(System.String);Use HttpMethods.Get instead to prevent creating extra instances of HttpMethod
+P:System.Web.HttpRequest.HttpMethod;Use HttpRequest.GetTransportMethod() instead since it returns a typed method instead of string
+P:System.Web.HttpRequestBase.HttpMethod;Use HttpRequestBase.GetMethod() or HttpRequestBase.GetTransportMethod() instead since they return a typed overriden/raw method instead of string
+M:System.Web.Mvc.HttpRequestExtensions.GetHttpMethodOverride(System.Web.HttpRequestBase);Use HttpRequestBase.GetMethod() instead since they return a typed overriden method instead of string
