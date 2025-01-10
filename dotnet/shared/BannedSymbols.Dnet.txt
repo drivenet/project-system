@@ -1,7 +1,6 @@
 ﻿M:AutoFixture.Xunit2.AutoDataAttribute.#ctor();Use Dnet.Testing.BaseAutoData or at least Dnet.Testing.FrameworkAutoData instead
 M:AutoFixture.Xunit2.AutoDataAttribute.#ctor(System.Type);Use Dnet.Testing.BaseAutoData or at least Dnet.Testing.FrameworkAutoData instead
 M:System.TimeProvider.CreateTimer(System.Threading.TimerCallback,System.Object,System.TimeSpan,System.TimeSpan); Use CreateTimer<TTarget> instead for a reeentrant, non-leaking, error-safe timer
-M:System.TimeProvider.GetElapsedTime(System.Int64); Use GetElapsedTime(System.Int64, System.Int64) instead to prevent potentially counterintuitive application
 T:System.Web.Routing.HttpMethodConstraint; Use Dnet.Web.Routing.OverridableHttpMethodConstraint instead since it supports X-HTTP-Method-Override
 T:System.Web.Mvc.HttpGetAttribute; Use System.Web.Mvc.Routing.ConstrainedRouteAttribute(..., HttpVerbs.Get) instead, to prevent the "Multiple controller types match..." problem
 T:System.Web.Mvc.HttpPostAttribute; Use System.Web.Mvc.Routing.ConstrainedRouteAttribute(..., HttpVerbs.Post) instead, to prevent the "Multiple controller types match..." problem
@@ -45,3 +44,5 @@ M:System.Net.HttpMethod.#ctor(System.String);Use HttpMethods.Get instead to prev
 P:System.Web.HttpRequest.HttpMethod;Use HttpRequest.GetTransportMethod() instead since it returns a typed method instead of string
 P:System.Web.HttpRequestBase.HttpMethod;Use HttpRequestBase.GetMethod() or HttpRequestBase.GetTransportMethod() instead since they return a typed overriden/raw method instead of string
 M:System.Web.Mvc.HttpRequestExtensions.GetHttpMethodOverride(System.Web.HttpRequestBase);Use HttpRequestBase.GetMethod() instead since they return a typed overriden method instead of string
+M:Microsoft.IO.RecyclableMemoryStreamManager.#ctor();Use Dnet.IO.Composition.IRecyclableMemoryStreamManagerFactory instead
+M:Microsoft.IO.RecyclableMemoryStreamManager.#ctor(Microsoft.IO.RecyclableMemoryStreamManager.Options);Use Dnet.IO.Composition.IRecyclableMemoryStreamManagerFactory instead
