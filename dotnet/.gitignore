@@ -5,7 +5,7 @@
 # .NET
 .vs/
 *.suo
-*.csproj.user
+*.user
 obj/
 bin/
 packages/
