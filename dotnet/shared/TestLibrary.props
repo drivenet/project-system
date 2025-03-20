@@ -4,7 +4,7 @@
 
   <PropertyGroup Label="AvailableTestLibraryTargetFrameworks">
     <DefaultTargetFramework>$(LegacyTargetFramework)</DefaultTargetFramework>
-    <DefaultTargetFrameworks>$(ApplicationTargetFramework);$(DefaultTargetFramework)</DefaultTargetFrameworks>
+    <DefaultTargetFrameworks>$(LegacyTargetFramework);$(ApplicationTargetFramework)</DefaultTargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup Label="TestProjectReferences">
@@ -12,6 +12,6 @@
   </ItemGroup>
 
   <ItemGroup Label="TestConfigFiles">
-    <None Include="$(MSBuildThisFileDirectory)\TestLibrary\app.config" Visible="false" Condition="'$(TargetFramework)' == '$(LegacyTargetFramework)'" />
+    <None Include="$(MSBuildThisFileDirectory)\TestLibrary\app.config" Visible="false" Condition="'$(TargetFramework)' != '$(ApplicationTargetFramework)'" />
   </ItemGroup>
 </Project>

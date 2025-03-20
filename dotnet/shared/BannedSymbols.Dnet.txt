@@ -1,14 +1,14 @@
 ﻿M:AutoFixture.Xunit2.AutoDataAttribute.#ctor();Use Dnet.Testing.BaseAutoData or at least Dnet.Testing.FrameworkAutoData instead
 M:AutoFixture.Xunit2.AutoDataAttribute.#ctor(System.Type);Use Dnet.Testing.BaseAutoData or at least Dnet.Testing.FrameworkAutoData instead
-M:System.TimeProvider.CreateTimer(System.Threading.TimerCallback,System.Object,System.TimeSpan,System.TimeSpan); Use CreateTimer<TTarget> instead for a reeentrant, non-leaking, error-safe timer
-T:System.Web.Routing.HttpMethodConstraint; Use Dnet.Web.Routing.OverridableHttpMethodConstraint instead since it supports X-HTTP-Method-Override
-T:System.Web.Mvc.HttpGetAttribute; Use System.Web.Mvc.Routing.ConstrainedRouteAttribute(..., HttpVerbs.Get) instead, to prevent the "Multiple controller types match..." problem
-T:System.Web.Mvc.HttpPostAttribute; Use System.Web.Mvc.Routing.ConstrainedRouteAttribute(..., HttpVerbs.Post) instead, to prevent the "Multiple controller types match..." problem
-T:System.Web.Mvc.HttpPutAttribute; Use System.Web.Mvc.Routing.ConstrainedRouteAttribute(..., HttpVerbs.Put) instead, to prevent the "Multiple controller types match..." problem
-T:System.Web.Mvc.HttpDeleteAttribute; Use System.Web.Mvc.Routing.ConstrainedRouteAttribute(..., HttpVerbs.Delete) instead, to prevent the "Multiple controller types match..." problem
-T:System.Web.Mvc.HttpHeadAttribute; Use System.Web.Mvc.Routing.ConstrainedRouteAttribute(..., HttpVerbs.Head) instead, to prevents the "Multiple controller types match..." problem
-T:System.Web.Mvc.HttpPatchAttribute; Use System.Web.Mvc.Routing.ConstrainedRouteAttribute(..., HttpVerbs.Patch) instead, to prevent the "Multiple controller types match..." problem
-T:System.Web.Mvc.HttpOptionsAttribute; Use System.Web.Mvc.Routing.ConstrainedRouteAttribute(..., HttpVerbs.Options) instead, to prevent the "Multiple controller types match..." problem
+M:System.TimeProvider.CreateTimer(System.Threading.TimerCallback,System.Object,System.TimeSpan,System.TimeSpan);Use CreateTimer<TTarget> instead for a reeentrant, non-leaking, error-safe timer
+T:System.Web.Routing.HttpMethodConstraint;Use Dnet.Web.Routing.OverridableHttpMethodConstraint instead since it supports X-HTTP-Method-Override
+T:System.Web.Mvc.HttpGetAttribute;Use System.Web.Mvc.Routing.ConstrainedRouteAttribute(..., HttpVerbs.Get) instead, to prevent the "Multiple controller types match..." problem
+T:System.Web.Mvc.HttpPostAttribute;Use System.Web.Mvc.Routing.ConstrainedRouteAttribute(..., HttpVerbs.Post) instead, to prevent the "Multiple controller types match..." problem
+T:System.Web.Mvc.HttpPutAttribute;Use System.Web.Mvc.Routing.ConstrainedRouteAttribute(..., HttpVerbs.Put) instead, to prevent the "Multiple controller types match..." problem
+T:System.Web.Mvc.HttpDeleteAttribute;Use System.Web.Mvc.Routing.ConstrainedRouteAttribute(..., HttpVerbs.Delete) instead, to prevent the "Multiple controller types match..." problem
+T:System.Web.Mvc.HttpHeadAttribute;Use System.Web.Mvc.Routing.ConstrainedRouteAttribute(..., HttpVerbs.Head) instead, to prevents the "Multiple controller types match..." problem
+T:System.Web.Mvc.HttpPatchAttribute;Use System.Web.Mvc.Routing.ConstrainedRouteAttribute(..., HttpVerbs.Patch) instead, to prevent the "Multiple controller types match..." problem
+T:System.Web.Mvc.HttpOptionsAttribute;Use System.Web.Mvc.Routing.ConstrainedRouteAttribute(..., HttpVerbs.Options) instead, to prevent the "Multiple controller types match..." problem
 M:System.Enum.IsDefined(System.Type,System.Object);Use Dnet.Utils.Enums.IsDefined(...) instead unless a type is not known at compile time
 M:System.Enum.GetValues`1();Use Dnet.Utils.Enums.GetValues(...) instead
 M:System.Enum.Parse(System.Type,System.String,System.Boolean);Use Dnet.Utils.Enums.Parse(...) instead unless a type is not known at compile time
@@ -44,5 +44,7 @@ M:System.Net.HttpMethod.#ctor(System.String);Use HttpMethods.Get instead to prev
 P:System.Web.HttpRequest.HttpMethod;Use HttpRequest.GetTransportMethod() instead since it returns a typed method instead of string
 P:System.Web.HttpRequestBase.HttpMethod;Use HttpRequestBase.GetMethod() or HttpRequestBase.GetTransportMethod() instead since they return a typed overriden/raw method instead of string
 M:System.Web.Mvc.HttpRequestExtensions.GetHttpMethodOverride(System.Web.HttpRequestBase);Use HttpRequestBase.GetMethod() instead since they return a typed overriden method instead of string
-M:Microsoft.IO.RecyclableMemoryStreamManager.#ctor();Use Dnet.IO.Composition.IRecyclableMemoryStreamManagerFactory instead
-M:Microsoft.IO.RecyclableMemoryStreamManager.#ctor(Microsoft.IO.RecyclableMemoryStreamManager.Options);Use Dnet.IO.Composition.IRecyclableMemoryStreamManagerFactory instead
+M:Microsoft.IO.RecyclableMemoryStreamManager.#ctor();Use Dnet.IO.Composition.IRecyclableMemoryStreamProviderFactory instead
+M:Microsoft.IO.RecyclableMemoryStreamManager.#ctor(Microsoft.IO.RecyclableMemoryStreamManager.Options);Use Dnet.IO.Composition.IRecyclableMemoryStreamProviderFactory instead
+M:System.IO.MemoryStream.#ctor();Use Dnet.IO.IRecyclableMemoryStreamProvider.Get instead, unless the created stream is long-lived
+M:System.IO.MemoryStream.#ctor(System.Int32);Use Dnet.IO.IRecyclableMemoryStreamProvider.Get instead, unless the created stream is long-lived
