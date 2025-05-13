@@ -44,6 +44,7 @@ M:System.Net.HttpMethod.#ctor(System.String);Use HttpMethods.Get instead to prev
 P:System.Web.HttpRequest.HttpMethod;Use HttpRequest.GetTransportMethod() instead since it returns a typed method instead of string
 P:System.Web.HttpRequestBase.HttpMethod;Use HttpRequestBase.GetMethod() or HttpRequestBase.GetTransportMethod() instead since they return a typed overriden/raw method instead of string
 M:System.Web.Mvc.HttpRequestExtensions.GetHttpMethodOverride(System.Web.HttpRequestBase);Use HttpRequestBase.GetMethod() instead since they return a typed overriden method instead of string
+T:Microsoft.IO.RecyclableMemoryStreamManager;Use Dnet.IO.Composition.IRecyclableMemoryStreamProvider instead
 M:Microsoft.IO.RecyclableMemoryStreamManager.#ctor();Use Dnet.IO.Composition.IRecyclableMemoryStreamProviderFactory instead
 M:Microsoft.IO.RecyclableMemoryStreamManager.#ctor(Microsoft.IO.RecyclableMemoryStreamManager.Options);Use Dnet.IO.Composition.IRecyclableMemoryStreamProviderFactory instead
 M:System.IO.MemoryStream.#ctor();Use Dnet.IO.IRecyclableMemoryStreamProvider.Get instead, unless the created stream is long-lived

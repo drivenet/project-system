@@ -12,6 +12,6 @@
   </ItemGroup>
 
   <ItemGroup Label="TestConfigFiles">
-    <None Include="$(MSBuildThisFileDirectory)\TestLibrary\app.config" Visible="false" Condition="'$(TargetFramework)' != '$(ApplicationTargetFramework)'" />
+    <None Include="$(MSBuildThisFileDirectory)\TestLibrary\app.config" Visible="false" Condition="!$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'netcoreapp3.1'))" />
   </ItemGroup>
 </Project>
