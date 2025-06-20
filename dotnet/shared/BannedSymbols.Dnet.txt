@@ -28,7 +28,6 @@ M:System.Web.Mvc.AjaxRequestExtensions.IsAjaxRequest(System.Web.HttpRequestBase)
 M:System.Threading.Tasks.Task.WaitAsync(System.Threading.CancellationToken);Consider using TaskExtensions.WithCancellation for more predictable antecedent task failure handling
 M:System.Threading.Tasks.Task.WaitAsync(System.TimeSpan);Consider using TaskExtensions.WithCancellation for more predictable antecedent task failure handling
 M:System.Threading.Tasks.Task.WaitAsync(System.TimeSpan,System.Threading.CancellationToken);Consider using TaskExtensions.WithCancellation for more predictable antecedent task failure handling
-M:System.Threading.Tasks.Task.WaitAsync(System.TimeSpan,System.Threading.CancellationToken);Consider using TaskExtensions.WithCancellation for more predictable antecedent task failure handling
 M:System.Threading.Tasks.Task.WaitAsync(System.TimeSpan,System.TimeProvider,System.Threading.CancellationToken);Consider using TaskExtensions.WithCancellation for more predictable antecedent task failure handling
 M:System.Threading.Tasks.Task`1.WaitAsync(System.Threading.CancellationToken);Consider using TaskExtensions.WithCancellation for more predictable antecedent task failure handling
 M:System.Threading.Tasks.Task`1.WaitAsync(System.TimeSpan);Consider using TaskExtensions.WithCancellation for more predictable antecedent task failure handling
@@ -49,6 +48,8 @@ M:Microsoft.IO.RecyclableMemoryStreamManager.#ctor();Use Dnet.IO.Composition.IRe
 M:Microsoft.IO.RecyclableMemoryStreamManager.#ctor(Microsoft.IO.RecyclableMemoryStreamManager.Options);Use Dnet.IO.Composition.IRecyclableMemoryStreamProviderFactory instead
 M:System.IO.MemoryStream.#ctor();Use Dnet.IO.IRecyclableMemoryStreamProvider.Get instead, unless the created stream is long-lived
 M:System.IO.MemoryStream.#ctor(System.Int32);Use Dnet.IO.IRecyclableMemoryStreamProvider.Get instead, unless the created stream is long-lived
-P:System.DateTime.Now;Use System.TimeProvider.GetLocalNow()/GetLocalDateTime() instead
-P:System.DateTime.UtcNow;Use System.TimeProvider.GetUtcNow()/GetUtcDateTime() instead
 M:System.Xml.XmlReaderSettings.#ctor; Avoid using XmlReaderSettings constructor directly, use Dnet.Text.XmlSettingsFactory.Create* family of methods
+M:Microsoft.Extensions.ObjectPool.ObjectPool.Create``1(Microsoft.Extensions.ObjectPool.IPooledObjectPolicy{``0});Use Dnet.Buffers.ObjectPoolProviders instead
+M:Microsoft.Extensions.ObjectPool.ObjectPool.Create``1;Use Dnet.Buffers.ObjectPoolProviders instead
+M:Microsoft.Extensions.ObjectPool.DefaultObjectPool`1.#ctor(Microsoft.Extensions.ObjectPool.IPooledObjectPolicy{`0});Use Dnet.Buffers.ObjectPoolProviders instead
+M:Microsoft.Extensions.ObjectPool.DefaultObjectPool`1.#ctor(Microsoft.Extensions.ObjectPool.IPooledObjectPolicy{`0},System.Int32);Use Dnet.Buffers.ObjectPoolProviders instead
