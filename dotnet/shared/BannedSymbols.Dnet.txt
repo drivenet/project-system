@@ -53,3 +53,6 @@ M:Microsoft.Extensions.ObjectPool.ObjectPool.Create``1(Microsoft.Extensions.Obje
 M:Microsoft.Extensions.ObjectPool.ObjectPool.Create``1;Use Dnet.Buffers.ObjectPoolProviders instead
 M:Microsoft.Extensions.ObjectPool.DefaultObjectPool`1.#ctor(Microsoft.Extensions.ObjectPool.IPooledObjectPolicy{`0});Use Dnet.Buffers.ObjectPoolProviders instead
 M:Microsoft.Extensions.ObjectPool.DefaultObjectPool`1.#ctor(Microsoft.Extensions.ObjectPool.IPooledObjectPolicy{`0},System.Int32);Use Dnet.Buffers.ObjectPoolProviders instead
+M:System.Threading.Tasks.Task.Delay(System.Int32,System.Threading.CancellationToken);Use CancellationToken.Delay instead to prevent context switches for short waiting times
+M:System.Threading.Tasks.Task.Delay(System.TimeSpan,System.Threading.CancellationToken);Use CancellationToken.Delay instead to prevent context switches for short waiting times
+M:System.Threading.Tasks.Task.Delay(System.TimeSpan,System.TimeProvider,System.Threading.CancellationToken);Use CancellationToken.Delay instead to prevent context switches for short waiting times
