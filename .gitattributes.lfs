@@ -97,7 +97,7 @@ Dockerfile text
 *.props text
 *.targets text
 *.cshtml text diff=html
-*.sln text eol=crlf merge=union
+*.sln text merge=union
 *.csproj text merge=union
 
 *.tf text
