@@ -1,4 +1,4 @@
-﻿<Project>
+<Project>
   <Import Project="MinimalTestLibrary.props" />
   <Import Project="DnetCompat.props" />
 
@@ -13,5 +13,14 @@
 
   <ItemGroup Label="TestConfigFiles">
     <None Include="$(MSBuildThisFileDirectory)\TestLibrary\app.config" Visible="false" Condition="!$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'netcoreapp3.1'))" />
+  </ItemGroup>
+
+  <ItemGroup Label="TestSecretFiles">
+    <None Include=".secrets\*.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include=".secrets\config\*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

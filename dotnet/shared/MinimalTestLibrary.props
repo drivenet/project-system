@@ -1,4 +1,4 @@
-﻿<Project>
+<Project>
   <Import Project="Minimal.props" />
 
   <PropertyGroup Label="MinimalTestLibraryProjectSettings">

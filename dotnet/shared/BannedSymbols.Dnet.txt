@@ -1,4 +1,4 @@
-﻿M:AutoFixture.Xunit2.AutoDataAttribute.#ctor();Use Dnet.Testing.BaseAutoData or at least Dnet.Testing.FrameworkAutoData instead
+M:AutoFixture.Xunit2.AutoDataAttribute.#ctor();Use Dnet.Testing.BaseAutoData or at least Dnet.Testing.FrameworkAutoData instead
 M:AutoFixture.Xunit2.AutoDataAttribute.#ctor(System.Type);Use Dnet.Testing.BaseAutoData or at least Dnet.Testing.FrameworkAutoData instead
 M:System.TimeProvider.CreateTimer(System.Threading.TimerCallback,System.Object,System.TimeSpan,System.TimeSpan);Use CreateTimer<TTarget> instead for a reeentrant, non-leaking, error-safe timer
 T:System.Web.Routing.HttpMethodConstraint;Use Dnet.Web.Routing.OverridableHttpMethodConstraint instead since it supports X-HTTP-Method-Override
@@ -56,3 +56,9 @@ M:System.Threading.Tasks.Task.Delay(System.Int32,System.Threading.CancellationTo
 M:System.Threading.Tasks.Task.Delay(System.TimeSpan,System.Threading.CancellationToken);Use CancellationToken.Delay instead to prevent context switches for short waiting times
 M:System.Threading.Tasks.Task.Delay(System.TimeSpan,System.TimeProvider,System.Threading.CancellationToken);Use CancellationToken.Delay instead to prevent context switches for short waiting times
 T:Dnet.Time.ITimestampSource;Use System.TimeProvider instead
+M:Dnet.Caching.ICacheFactory.CreateDirectLoading``1(Dnet.Caching.CacheName,Dnet.Caching.LoadingCacheSettings{``0});Use CreateLoading instead to use loader-based cache, using direct caches should be limited to rare cases
+M:Dnet.Caching.ICacheFactory.CreateDirectLoading``2(Dnet.Caching.CacheName,Dnet.Caching.LoadingCacheSettings{``0,``1});Use CreateLoading instead to use loader-based cache, using direct caches should be limited to rare cases
+M:Dnet.Caching.ISupportingSetCache``1.Set(`0@);Prefer not using direct cache value assignment because it increases stale cache risks and does not work across distributed caches
+M:Dnet.Caching.ISupportingSetCache``1.Set(`0@,Dnet.Caching.CacheUpdater{`0});Prefer not using direct cache value assignment because it increases stale cache risks and does not work across distributed caches
+M:Dnet.Caching.ISupportingSetCache``2.Set(`0,`1@);Prefer not using direct cache value assignment because it increases stale cache risks and does not work across distributed caches
+M:Dnet.Caching.ISupportingSetCache``2.Set(`0,`1@,Dnet.Caching.CacheUpdater{`0,`1});Prefer not using direct cache value assignment because it increases stale cache risks and does not work across distributed caches

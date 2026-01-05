@@ -1,13 +1,13 @@
-﻿M:System.Threading.Tasks.Task.WaitAll(System.Threading.Tasks.Task[]);Use WhenAll(...).AwaitUncaptured() instead
-M:System.Threading.Tasks.Task.WaitAll(System.Threading.Tasks.Task[],System.TimeSpan);Use WhenAll(...).AwaitUncaptured() instead
-M:System.Threading.Tasks.Task.WaitAll(System.Threading.Tasks.Task[],System.Int32);Use WhenAll(...).AwaitUncaptured() instead
-M:System.Threading.Tasks.Task.WaitAll(System.Threading.Tasks.Task[],System.Int32,System.Threading.CancellationToken);Use WhenAll(...).AwaitUncaptured() instead
-M:System.Threading.Tasks.Task.WaitAll(System.Threading.Tasks.Task[],System.Threading.CancellationToken);Use WhenAll(...).AwaitUncaptured() instead
-M:System.Threading.Tasks.Task.WaitAny(System.Threading.Tasks.Task[]);Use WhenAny(...).AwaitUncaptured().AwaitUncaptured() instead
-M:System.Threading.Tasks.Task.WaitAny(System.Threading.Tasks.Task[],System.TimeSpan);Use WhenAny(...).AwaitUncaptured().AwaitUncaptured() instead
-M:System.Threading.Tasks.Task.WaitAny(System.Threading.Tasks.Task[],System.Int32);Use WhenAny(...).AwaitUncaptured().AwaitUncaptured() instead
-M:System.Threading.Tasks.Task.WaitAny(System.Threading.Tasks.Task[],System.Int32,System.Threading.CancellationToken);Use WhenAny(...).AwaitUncaptured().AwaitUncaptured() instead
-M:System.Threading.Tasks.Task.WaitAny(System.Threading.Tasks.Task[],System.Threading.CancellationToken);Use WhenAny(...).AwaitUncaptured().AwaitUncaptured() instead
+M:System.Threading.Tasks.Task.WaitAll(System.Threading.Tasks.Task[]);Use WhenAll(...).Await() instead
+M:System.Threading.Tasks.Task.WaitAll(System.Threading.Tasks.Task[],System.TimeSpan);Use WhenAll(...).Await() instead
+M:System.Threading.Tasks.Task.WaitAll(System.Threading.Tasks.Task[],System.Int32);Use WhenAll(...).Await() instead
+M:System.Threading.Tasks.Task.WaitAll(System.Threading.Tasks.Task[],System.Int32,System.Threading.CancellationToken);Use WhenAll(...).Await() instead
+M:System.Threading.Tasks.Task.WaitAll(System.Threading.Tasks.Task[],System.Threading.CancellationToken);Use WhenAll(...).Await() instead
+M:System.Threading.Tasks.Task.WaitAny(System.Threading.Tasks.Task[]);Use WhenAny(...).Await().Await() instead
+M:System.Threading.Tasks.Task.WaitAny(System.Threading.Tasks.Task[],System.TimeSpan);Use WhenAny(...).Await().Await() instead
+M:System.Threading.Tasks.Task.WaitAny(System.Threading.Tasks.Task[],System.Int32);Use WhenAny(...).Await().Await() instead
+M:System.Threading.Tasks.Task.WaitAny(System.Threading.Tasks.Task[],System.Int32,System.Threading.CancellationToken);Use WhenAny(...).Await().Await() instead
+M:System.Threading.Tasks.Task.WaitAny(System.Threading.Tasks.Task[],System.Threading.CancellationToken);Use WhenAny(...).Await().Await() instead
 P:System.OperationCanceledException.CancellationToken;Check the passed CancellationToken.IsCancellationRequest instead, since exception-contained token can be a different one
 M:System.Threading.Thread.VolatileRead(System.Object@);Use Volatile.Read instead, this method is considered legacy
 M:System.Threading.Thread.VolatileRead(System.SByte@);Use Volatile.Read instead, this method is considered legacy
@@ -68,6 +68,9 @@ P:System.Collections.Concurrent.ConcurrentDictionary`2.IsEmpty;Use Interlocked c
 P:System.Collections.Concurrent.ConcurrentDictionary`2.Keys;Use dictionary pair enumeration instead, since this property is very slow
 P:System.Collections.Concurrent.ConcurrentDictionary`2.Values;Use dictionary pair enumeration instead, since this property is very slow
 M:System.Collections.Concurrent.ConcurrentDictionary`2.ToArray();Use dictionary pair enumeration instead, since this method is very slow
+P:System.Collections.Concurrent.ConcurrentBag`1.Count;Use Interlocked counting instead, since this property is very slow
+P:System.Collections.Concurrent.ConcurrentBag`1.IsEmpty;Use Interlocked counting instead, since this property is very slow
+P:System.Collections.Concurrent.ConcurrentStack`1.Count;Use Interlocked counting instead, since this property is very slow
 M:Newtonsoft.Json.JsonSerializer.#ctor();Use JsonSerializer.CreateDefault() or JsonSerializer.Create(JsonSerializerSettings) instead
 M:Newtonsoft.Json.Linq.JObject.FromObject(System.Object);Use FromObject(Object, JSonSerializer) instead, since using implicit default serializer may lead to errors and creating serializer each time is slow
 M:Newtonsoft.Json.Linq.JToken.FromObject(System.Object);Use FromObject(Object, JSonSerializer) instead, since using implicit default serializer may lead to errors and creating serializer each time is slow
@@ -238,3 +241,5 @@ M:System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Action{Sy
 M:System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Action{System.Int64,System.Threading.Tasks.ParallelLoopState}); Use Parallel.For with ParallelOptions parameter to control parallelism settings
 M:System.Threading.Tasks.Parallel.For``1(System.Int32,System.Int32,System.Func{``0},System.Func{System.Int32,System.Threading.Tasks.ParallelLoopState,``0,``0},System.Action{``0}); Use Parallel.For with ParallelOptions parameter to control parallelism settings
 M:System.Threading.Tasks.Parallel.For``1(System.Int64,System.Int64,System.Func{``0},System.Func{System.Int64,System.Threading.Tasks.ParallelLoopState,``0,``0},System.Action{``0}); Use Parallel.For with ParallelOptions parameter to control parallelism settings
+M:System.Threading.Tasks.TaskCompletionSource`1.#ctor();Use constructor overload that specifies TaskCreationOptions to make sure that you choose whether to run continuations asynchronously
+M:System.Threading.Tasks.TaskCompletionSource`1.#ctor(System.Object);Use constructor overload that specifies TaskCreationOptions to make sure that you choose whether to run continuations asynchronously
