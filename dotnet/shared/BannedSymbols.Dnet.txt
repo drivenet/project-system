@@ -2,6 +2,8 @@ M:AutoFixture.Xunit2.AutoDataAttribute.#ctor();Use Dnet.Testing.BaseAutoData or 
 M:AutoFixture.Xunit2.AutoDataAttribute.#ctor(System.Type);Use Dnet.Testing.BaseAutoData or at least Dnet.Testing.FrameworkAutoData instead
 M:System.TimeProvider.CreateTimer(System.Threading.TimerCallback,System.Object,System.TimeSpan,System.TimeSpan);Use CreateTimer<TTarget> instead for a reeentrant, non-leaking, error-safe timer
 T:System.Web.Routing.HttpMethodConstraint;Use Dnet.Web.Routing.OverridableHttpMethodConstraint instead since it supports X-HTTP-Method-Override
+P:System.Web.HttpCookieCollection.Item(System.String);Use Dnet.Web.HttpCookieCollectionExtensions.GetValues instead to properly handle multiple cookies with the same name
+M:System.Web.HttpCookieCollection.Get(System.String);Use Dnet.Web.HttpCookieCollectionExtensions.GetValues instead to properly handle multiple cookies with the same name
 T:System.Web.Mvc.HttpGetAttribute;Use System.Web.Mvc.Routing.ConstrainedRouteAttribute(..., HttpVerbs.Get) instead, to prevent the "Multiple controller types match..." problem
 T:System.Web.Mvc.HttpPostAttribute;Use System.Web.Mvc.Routing.ConstrainedRouteAttribute(..., HttpVerbs.Post) instead, to prevent the "Multiple controller types match..." problem
 T:System.Web.Mvc.HttpPutAttribute;Use System.Web.Mvc.Routing.ConstrainedRouteAttribute(..., HttpVerbs.Put) instead, to prevent the "Multiple controller types match..." problem
@@ -34,8 +36,8 @@ M:System.Threading.Tasks.Task`1.WaitAsync(System.TimeSpan,System.Threading.Cance
 M:System.Threading.Tasks.Task`1.WaitAsync(System.TimeSpan,System.TimeProvider,System.Threading.CancellationToken);Consider using TaskExtensions.WithCancellation for more predictable antecedent task failure handling
 M:System.Threading.Tasks.TimeProviderTaskExtensions.WaitAsync(System.Threading.Tasks.Task,System.TimeSpan,System.TimeProvider,System.Threading.CancellationToken);Consider using TaskExtensions.WithCancellation for more predictable antecedent task failure handling
 M:System.Threading.Tasks.TimeProviderTaskExtensions.WaitAsync`1(System.Threading.Tasks.Task`1,System.TimeSpan,System.TimeProvider,System.Threading.CancellationToken);Consider using TaskExtensions.WithCancellation for more predictable antecedent task failure handling
-P:System.Web.Configuration.HttpCapabilitiesBase.Crawler;Use HttpContext.GetBotCheckContext() instead
-P:System.Web.HttpBrowserCapabilitiesBase.Crawler;Use HttpContext.GetBotCheckContext() instead
+P:System.Web.Configuration.HttpCapabilitiesBase.Crawler;Use HttpContext.GetBotInfo().IsBot() instead
+P:System.Web.HttpBrowserCapabilitiesBase.Crawler;Use HttpContext.GetBotInfo().IsBot() instead
 P:System.Reflection.Assembly.ExportedTypes;Use SafeGetExportedTypes() instead
 M:System.Reflection.Assembly.GetExportedTypes();Use SafeGetExportedTypes() instead
 M:System.Net.HttpMethod.#ctor(System.String);Use HttpMethods.Get instead to prevent creating extra instances of HttpMethod
@@ -55,7 +57,6 @@ M:Microsoft.Extensions.ObjectPool.DefaultObjectPool`1.#ctor(Microsoft.Extensions
 M:System.Threading.Tasks.Task.Delay(System.Int32,System.Threading.CancellationToken);Use CancellationToken.Delay instead to prevent context switches for short waiting times
 M:System.Threading.Tasks.Task.Delay(System.TimeSpan,System.Threading.CancellationToken);Use CancellationToken.Delay instead to prevent context switches for short waiting times
 M:System.Threading.Tasks.Task.Delay(System.TimeSpan,System.TimeProvider,System.Threading.CancellationToken);Use CancellationToken.Delay instead to prevent context switches for short waiting times
-T:Dnet.Time.ITimestampSource;Use System.TimeProvider instead
 M:Dnet.Caching.ICacheFactory.CreateDirectLoading``1(Dnet.Caching.CacheName,Dnet.Caching.LoadingCacheSettings{``0});Use CreateLoading instead to use loader-based cache, using direct caches should be limited to rare cases
 M:Dnet.Caching.ICacheFactory.CreateDirectLoading``2(Dnet.Caching.CacheName,Dnet.Caching.LoadingCacheSettings{``0,``1});Use CreateLoading instead to use loader-based cache, using direct caches should be limited to rare cases
 M:Dnet.Caching.ISupportingSetCache``1.Set(`0@);Prefer not using direct cache value assignment because it increases stale cache risks and does not work across distributed caches
@@ -111,3 +112,5 @@ M:Dnet.Mongo.Policies.PoliciedMongoCollection`2.IdempotentUpdateOneAsync(MongoDB
 M:Dnet.Mongo.Policies.PoliciedMongoCollection`2.IdempotentUpdateOneAsync(MongoDB.Driver.IClientSessionHandle,MongoDB.Driver.FilterDefinition{`0},MongoDB.Driver.UpdateDefinition{`0},MongoDB.Driver.UpdateOptions,System.Threading.CancellationToken);Use synchronous version of this method unless you need explicit concurrency and cancellation capabilities
 M:Dnet.Mongo.Policies.PoliciedMongoCollection`2.IdempotentFindOneAndUpdateAsync``1(MongoDB.Driver.FilterDefinition{`0},MongoDB.Driver.UpdateDefinition{`0},MongoDB.Driver.FindOneAndUpdateOptions{`0,``0},System.Threading.CancellationToken);Use synchronous version of this method unless you need explicit concurrency and cancellation capabilities
 M:Dnet.Mongo.Policies.PoliciedMongoCollection`2.IdempotentFindOneAndUpdateAsync``1(MongoDB.Driver.IClientSessionHandle,MongoDB.Driver.FilterDefinition{`0},MongoDB.Driver.UpdateDefinition{`0},MongoDB.Driver.FindOneAndUpdateOptions{`0,``0},System.Threading.CancellationToken);Use synchronous version of this method unless you need explicit concurrency and cancellation capabilities
+M:System.DateTimeOffset.#ctor(System.DateTime);Use DateTimeOffset constructor with a specified offset, checking the DateTime.Kind or the DateTime.ToDateTimeOffset extension method, since this constructor is very prone to timezone errors
+P:System.DateTimeOffset.Date;Use DateTimeOffset.GetDate() extension method instead of this property, since this its value kind is DateTimeKind.Unspecified

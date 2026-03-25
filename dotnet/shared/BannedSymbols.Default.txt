@@ -1,5 +1,5 @@
 M:System.IO.MemoryStream.ToArray();Use MemoryStream.GetBuffer() instead, unless a strict-sized array is required
-M:System.Diagnostics.Stopwatch.GetTimestamp();Use System.TimeProvider.GetTimestamp() instead, unless performance-constrained
+M:System.Diagnostics.Stopwatch.GetTimestamp();Use System.TimeProvider.GetMonotonicTime() instead, unless performance-constrained
 P:MongoDB.Driver.WriteConcern.Unacknowledged;Use W1 write concern instead
 P:MongoDB.Driver.WriteConcern.Acknowledged;Consider using WMajority or W1 write concerns instead
 P:MongoDB.Driver.WriteConcern.W2;Use WMajority write concern instead
@@ -22,3 +22,4 @@ P:System.Diagnostics.Stopwatch.ElapsedMilliseconds;Use System.TimeProvider.GetEl
 P:System.Diagnostics.Stopwatch.ElapsedTicks;Use System.TimeProvider.GetElapsedTime() instead, unless performance-constrained, since Stopwatch isn't testable
 P:Nest.QueryBase.Name;Query names should not be used in production code as they are primarily for debugging purposes and impact performance
 P:Nest.SearchRequest.TrackScores;Tracking scores is only needed when not ordering by the `_score`, otherwise they just impact performance
+M:System.TimeProvider.GetTimestamp();Use System.TimeProvider.GetMonotonicTime() instead
