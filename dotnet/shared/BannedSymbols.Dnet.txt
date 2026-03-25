@@ -1,6 +1,8 @@
 M:AutoFixture.Xunit2.AutoDataAttribute.#ctor();Use Dnet.Testing.BaseAutoData or at least Dnet.Testing.FrameworkAutoData instead
 M:AutoFixture.Xunit2.AutoDataAttribute.#ctor(System.Type);Use Dnet.Testing.BaseAutoData or at least Dnet.Testing.FrameworkAutoData instead
 M:System.TimeProvider.CreateTimer(System.Threading.TimerCallback,System.Object,System.TimeSpan,System.TimeSpan);Use CreateTimer<TTarget> instead for a reeentrant, non-leaking, error-safe timer
+M:System.TimeProvider.GetTimestamp();Use System.TimeProvider.GetMonotonicTime() instead
+M:System.Diagnostics.Stopwatch.GetTimestamp();Use System.TimeProvider.GetMonotonicTime() instead, unless performance-constrained
 T:System.Web.Routing.HttpMethodConstraint;Use Dnet.Web.Routing.OverridableHttpMethodConstraint instead since it supports X-HTTP-Method-Override
 P:System.Web.HttpCookieCollection.Item(System.String);Use Dnet.Web.HttpCookieCollectionExtensions.GetValues instead to properly handle multiple cookies with the same name
 M:System.Web.HttpCookieCollection.Get(System.String);Use Dnet.Web.HttpCookieCollectionExtensions.GetValues instead to properly handle multiple cookies with the same name
