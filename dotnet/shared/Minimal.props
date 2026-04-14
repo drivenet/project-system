@@ -6,7 +6,7 @@
   <PropertyGroup Label="AvailableTargetFrameworks">
     <LegacyTargetFramework>net472</LegacyTargetFramework>
     <LegacyTargetFrameworkVersion>v4.7.2</LegacyTargetFrameworkVersion>
-    <ApplicationTargetFramework>net8.0</ApplicationTargetFramework>
+    <ApplicationTargetFramework>net10.0</ApplicationTargetFramework>
     <GeneratorTargetFramework>net472</GeneratorTargetFramework>
   </PropertyGroup>
 
