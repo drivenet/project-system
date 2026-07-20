@@ -28,6 +28,8 @@ M:System.IO.StreamWriter.#ctor(System.String,System.Boolean,System.Text.Encoding
 M:System.IO.StreamWriter.#ctor(System.IO.Stream,System.Text.Encoding,System.Int32,System.Boolean);Use FormattedStreamWriter instead
 M:System.IO.StreamWriter.#ctor(System.String,System.Boolean,System.Text.Encoding,System.Int32);Use FormattedStreamWriter instead
 M:System.Web.Mvc.AjaxRequestExtensions.IsAjaxRequest(System.Web.HttpRequestBase);Use Dnet.Web.HttpRequestBaseExtensions.IsXhr instead since the original method checks in too many places
+P:System.Web.HttpRequest.UrlReferrer;Use SafeUrlReferrer() instead since this property throws on invalid referrer
+P:System.Web.HttpRequestBase.UrlReferrer;Use SafeUrlReferrer() instead since this property throws on invalid referrer
 M:System.Threading.Tasks.Task.WaitAsync(System.Threading.CancellationToken);Consider using TaskExtensions.WithCancellation for more predictable antecedent task failure handling
 M:System.Threading.Tasks.Task.WaitAsync(System.TimeSpan);Consider using TaskExtensions.WithCancellation for more predictable antecedent task failure handling
 M:System.Threading.Tasks.Task.WaitAsync(System.TimeSpan,System.Threading.CancellationToken);Consider using TaskExtensions.WithCancellation for more predictable antecedent task failure handling
@@ -116,3 +118,10 @@ M:Dnet.Mongo.Policies.PoliciedMongoCollection`2.IdempotentFindOneAndUpdateAsync`
 M:Dnet.Mongo.Policies.PoliciedMongoCollection`2.IdempotentFindOneAndUpdateAsync``1(MongoDB.Driver.IClientSessionHandle,MongoDB.Driver.FilterDefinition{`0},MongoDB.Driver.UpdateDefinition{`0},MongoDB.Driver.FindOneAndUpdateOptions{`0,``0},System.Threading.CancellationToken);Use synchronous version of this method unless you need explicit concurrency and cancellation capabilities
 M:System.DateTimeOffset.#ctor(System.DateTime);Use DateTimeOffset constructor with a specified offset, checking the DateTime.Kind or the DateTime.ToDateTimeOffset extension method, since this constructor is very prone to timezone errors
 P:System.DateTimeOffset.Date;Use DateTimeOffset.GetDate() extension method instead of this property, since this its value kind is DateTimeKind.Unspecified
+M:System.Net.WebUtility.HtmlEncode(System.String);Use Dnet.Text.TextEncoders.Html.Encode instead
+M:System.Net.WebUtility.HtmlEncode(System.String,System.IO.TextWriter);Use Dnet.Text.TextEncoders.Html.Encode instead
+M:System.Web.HttpUtility.HtmlEncode(System.Object);Use Dnet.Text.TextEncoders.Html.Encode instead
+M:System.Web.HttpUtility.HtmlEncode(System.String);Use Dnet.Text.TextEncoders.Html.Encode instead
+M:System.Web.HttpUtility.HtmlEncode(System.String,System.IO.TextWriter);Use Dnet.Text.TextEncoders.Html.Encode instead
+M:System.Web.HttpUtility.HtmlAttributeEncode(System.String);Use Dnet.Text.TextEncoders.Html.Encode instead
+M:System.Web.HttpUtility.HtmlAttributeEncode(System.String,System.IO.TextWriter);Use Dnet.Text.TextEncoders.Html.Encode instead
