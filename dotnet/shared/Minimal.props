@@ -17,6 +17,7 @@
     <Description>-</Description>
     <NeutralLanguage>en</NeutralLanguage>
     <LangVersion>latest</LangVersion>
+    <RollForward>latestMajor</RollForward>
     <Configurations>$(Configurations);Integration</Configurations>
     <DebugType>embedded</DebugType>
     <Deterministic>true</Deterministic>
